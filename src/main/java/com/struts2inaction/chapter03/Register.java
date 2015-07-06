@@ -79,17 +79,17 @@ public class Register extends ActionSupport {
 	
 		/* Check that fields are not empty */
 		if(getPassword().length() == 0){
-			addFieldError("password", "Password is required");
+			addFieldError("password", getText("password.required"));
 		}
 		if(getUsername().length() == 0){
-			addFieldError("username", "Username is required");
+			addFieldError("username", getText("username.required"));
 		}
 		if(getPortfolioName().length() == 0){
-			addFieldError("portfolioName", "Portfolio name is required");
+			addFieldError("portfolioName", getText("portfolioName.required"));
 		}
 		/* Make sure user doesn't already have an account */
 		if(ps.userExists(getUsername())){
-			addFieldError("username", "This user already exists");
+			addFieldError("username", getText("user.exists"));
 		}
 	}
 	
