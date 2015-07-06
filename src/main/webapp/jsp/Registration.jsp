@@ -9,9 +9,9 @@
 	<body>
 		<h4>Welcome to the Struts 2 Portfolio!</h4> 	
 		<s:form action="Register">
-			<s:textfield name="username" label="Username"/>
-			<s:password name="password" label="Password"/>
-			<s:textfield name="portfolioName" label="Enter a name for your portfolio"/>
+			<s:textfield name="user.username" label="Username"/>
+			<s:password name="user.password" label="Password"/>
+			<s:textfield name="user.portfolioName" label="Enter a name for your portfolio"/>
 			<s:submit/>
 		</s:form>
 	</body>

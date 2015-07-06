@@ -8,7 +8,7 @@
 
 	<body>
 		<h5>Congratulations! You have created</h5> 	
-		<h3>The <s:property value="portfolioName" /> Portfolio</h3>
+		<h3>The <s:property value="user.portfolioName" /> Portfolio</h3>
 		<p>
 		You may now begin working with 
 		<a href="<s:url action='secure/AdminPortfolio'/>">your portfolio.</a>
