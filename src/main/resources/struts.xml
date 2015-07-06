@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+		"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<constant name="struts.devMode" value="true"/>
+
+	<!--
+		The package element is an important container for organizing actions,
+	    results, and other component elements.
+	 
+		This package contains the non-secure portions of the Struts 2 Portfolio. This allows these
+		public actions to share inheritance of things specialized to the non-secure portions of the application.
+		
+		Note, at this point, the Struts 2 Portfolio doesn't actually have any security functionality to 
+		check credentials or restrict access, but we have already packaged in a way that anticipates these 
+		needs.
+	-->
+    
+	<package name="Public" namespace="/" extends="struts-default">
+		<action name="PortfolioHomePage">
+			<result>/jsp/PortfolioHomePage.jsp</result>
+		</action>
+		<action name="Registration">
+			<result>/jsp/Registration.jsp</result>
+		</action>
+		<action name="Register" class="com.struts2inaction.chapter03.Register">
+			<result>/jsp/RegistrationSuccess.jsp</result>
+			<result name="input">/jsp/Registration.jsp</result>
+		</action>
+	</package>	
+	
+	<package name="Secure" namespace="/secure" extends="struts-default">
+		<action name="AdminPortfolio">
+			<result>/jsp/AdminPortfolio.jsp</result>
+		</action>
+		<action name="AddImage">
+			<result>/jsp/ImageAdded.jsp</result>
+		</action>
+		<action name="RemoveImage">
+			<result>/jsp/ImageRemoved.jsp</result>
+		</action>
+	</package>
+ 
+</struts>
