@@ -36,8 +36,14 @@
 			<result>/jsp/AdminPortfolio.jsp</result>
 		</action>
 		<action name="AddImage">
-			<result>/jsp/ImageAdded.jsp</result>
+			<result>/jsp/ImageUploadForm.jsp</result>
 		</action>
+		
+		<action name="ImageUpload" class="com.struts2inaction.chapter03.ImageUpload">
+			<result>/jsp/ImageAdded.jsp</result>
+			<result name="input">/jsp/ImageUploadForm.jsp</result>
+		</action>
+		
 		<action name="RemoveImage">
 			<result>/jsp/ImageRemoved.jsp</result>
 		</action>
