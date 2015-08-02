@@ -8,14 +8,14 @@
   <name>01ST2Chapter03 Maven Webapp</name>
   <url>http://maven.apache.org</url>
   
-  <properties>
-		<struts2.version>2.3.20</struts2.version>
+  	<properties>
+		<struts2.version>2.1.8</struts2.version>
+		<struts2-convention.version>2.1.8</struts2-convention.version>
 		<log4j.version>1.2.17</log4j.version>
 		<junit.version>3.8.1</junit.version>
-		<servlet.version>2.5</servlet.version>
 	</properties>
-	
-  <dependencies>
+
+	<dependencies>
 		<!-- JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -35,11 +35,18 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
+		<!-- Struts 2 Annotations-->
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-convention-plugin</artifactId>
+			<version>${struts2-convention.version}</version>
+		</dependency>
 		<!-- Servlet Specification -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
-			<version>${servlet.version}</version>
+			<version>2.5</version>
 		</dependency>
 		<!-- Log4j -->
 		<dependency>
