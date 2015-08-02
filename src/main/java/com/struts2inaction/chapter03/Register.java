@@ -1,18 +1,19 @@
 package com.struts2inaction.chapter03;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 import com.struts2inaction.chapter03.utils.PortfolioService;
 import com.struts2inaction.chapter03.utils.User;
 
 /*
- * This is our version of the Register action that uses object backed 
- * JavaBeans properties to receive the data transfer.  This classes uses
- * uses an application domain object, the user, as a JavaBeans property
- * in order to let the framework take over the tedious task of instantiating
- * the user object and assembling the individual datum onto it.  
+ * This is our ModelDriven version of the Register action.  This action
+ * implements the ModelDriven interface, which exposes the single getModel()
+ * method which is used by the model driven interceptor to retrieve our 
+ * User object for data transfer.  
+ *   
  */
 
-public class Register extends ActionSupport {
+public class Register extends ActionSupport implements ModelDriven{
 
 	private static final long serialVersionUID = 3704526436133156955L;
 
@@ -25,15 +26,11 @@ public class Register extends ActionSupport {
 		return SUCCESS;
 	}
 	
-	/* JavaBeans Properties to Receive Request Parameters */
-	private User user;
-	
-	public User getUser() {
+	/* Instance field and getModel() to support the ModelDriven interface */
+	private User user = new User();
+	@Override
+	public Object getModel() {
 		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
 	}
 	
 	/* Validateable Implementation 
@@ -59,18 +56,18 @@ public class Register extends ActionSupport {
 		PortfolioService ps = getPortfolioService();
 	
 		/* Check that fields are not empty */
-		if(getUser().getPassword().length() == 0){
-			addFieldError("user.password", getText("password.required"));
+		if(user.getPassword().length() == 0){
+			addFieldError("password", getText("password.required"));
 		}
-		if(getUser().getUsername().length() == 0){
-			addFieldError("user.username", getText("username.required"));
+		if(user.getUsername().length() == 0){
+			addFieldError("username", getText("username.required"));
 		}
-		if(getUser().getPortfolioName().length() == 0){
-			addFieldError("user.portfolioName", getText("portfolioName.required"));
+		if(user.getPortfolioName().length() == 0){
+			addFieldError("portfolioName", getText("portfolioName.required"));
 		}
 		/* Make sure user doesn't already have an account */
-		if(ps.userExists(getUser().getUsername())){
-			addFieldError("user.username", getText("user.exists"));
+		if(ps.userExists(user.getUsername())){
+			addFieldError("username", getText("user.exists"));
 		}
 	}
 	
@@ -82,5 +79,7 @@ public class Register extends ActionSupport {
 	public PortfolioService getPortfolioService(){
 		return new PortfolioService();
 	}
+
+
 
 }
