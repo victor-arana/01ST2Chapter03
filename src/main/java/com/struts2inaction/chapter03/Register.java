@@ -20,8 +20,7 @@ public class Register extends ActionSupport {
 	 * Create and move the data onto our application domain object, user.
 	 */
 	@Override
-	public String execute() throws Exception {
-		
+	public String execute() throws Exception {		
 		getPortfolioService().createAccount(user);
 		return SUCCESS;
 	}
