@@ -67,5 +67,7 @@
 			<result>/jsp/ImageRemoved.jsp</result>
 		</action>
 	</package>
+	
+	<include file="evaluaciones2015.xml"/>
  
 </struts>
