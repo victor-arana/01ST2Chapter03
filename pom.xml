@@ -23,6 +23,12 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+  			<groupId>org.apache.struts</groupId>
+  			<artifactId>struts2-junit-plugin</artifactId>
+  			<version>${struts2.version}</version>
+  			<scope>test</scope>
+		</dependency>
 		<!-- Struts 2 -->
 		<dependency>
 			<groupId>org.apache.struts</groupId>
@@ -35,7 +41,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
 		<!-- Struts 2 Annotations-->
 		<dependency>
 			<groupId>org.apache.struts</groupId>
@@ -45,14 +50,22 @@
 		<!-- Servlet Specification -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
+			<artifactId>servlet-api</artifactId>			
 			<version>2.5</version>
+			<scope>provided</scope>
 		</dependency>
 		<!-- Log4j -->
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
+		</dependency>
+		
+		<!-- struts2-spring-plugin -->
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-spring-plugin</artifactId>
+			<version>2.1.8</version>
 		</dependency>
 	</dependencies>  
   <build>

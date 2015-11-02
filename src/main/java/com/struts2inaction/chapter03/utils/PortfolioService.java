@@ -13,7 +13,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 
-public class PortfolioService  {
+public class PortfolioService  implements PortfolioServiceInterface{
 	
 	
 	/*
@@ -286,5 +286,47 @@ public class PortfolioService  {
 			defaultUsername = user.getUsername();
 		}
 		return defaultUsername;
+	}
+
+	@Override
+	public void updateUser(User user) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public User getUser(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Portfolio getPortfolio(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean contains(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void updatePortfolio(Portfolio port) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setFileSystemHome(String homePath) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getFileSystemHome() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
