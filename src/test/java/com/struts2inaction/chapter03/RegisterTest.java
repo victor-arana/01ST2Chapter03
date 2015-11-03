@@ -1,10 +1,11 @@
 package com.struts2inaction.chapter03;
 
-import org.apache.struts2.StrutsTestCase;
+import org.apache.struts2.StrutsSpringTestCase;
 
 import com.opensymphony.xwork2.ActionProxy;
 
-public class RegisterTest extends StrutsTestCase {
+public class RegisterTest extends StrutsSpringTestCase
+ {
 
 	public void testUserNameErrorMessage() throws Exception{
 		

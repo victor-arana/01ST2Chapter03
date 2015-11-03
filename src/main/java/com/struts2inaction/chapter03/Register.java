@@ -16,6 +16,8 @@ import com.struts2inaction.chapter03.utils.User;
 public class Register extends ActionSupport {
 
 	private static final long serialVersionUID = 3704526436133156955L;
+	
+	private PortfolioService portfolioService;
 
 	/*
 	 * Create and move the data onto our application domain object, user.
@@ -92,14 +94,11 @@ public class Register extends ActionSupport {
 			addFieldError("username", getText("user.exists"));
 		}
 	}
-	
-	/*  
-	 * Simple way to retrieve our business logic and data persistence
-	 * object.  Late versions of the portfolio app will integrate with
-	 * more sophisticated technologies for these services.
-	 */
-	public PortfolioService getPortfolioService(){
-		return new PortfolioService();
+	public PortfolioService getPortfolioService() {
+		return portfolioService;
 	}
-
+	public void setPortfolioService(PortfolioService portfolioService) {
+		this.portfolioService = portfolioService;
+	}
+	
 }
